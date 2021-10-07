@@ -22,19 +22,19 @@
 <p id="result">Results</p>
 
 <script> 
- var res = ""
-        power = 1
+ var results= ""
+        pwr = 1
         function powers() {
             console.log("Getting form values")
             base = document.getElementById("form1_base").value
             exponent = document.getElementById("form1_exp").value
             for (i = 0; i < exponent; i++) {
-                power *= base
-                res = res + " " + power
+                pwr *= base
+                results = results + " " + pwr
             }
             out = document.getElementById("result")
-            if (res != null) {
-                out.innerHTML = "powers of base are: " + res
+            if (results != null) {
+                out.innerHTML = "powers of base are: " + results
             }
         }
 
