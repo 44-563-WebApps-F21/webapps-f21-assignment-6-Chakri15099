@@ -19,8 +19,13 @@
         <p id="result">Phrase validation result </p>
     </form>
     <script>
+        let counter=0
         let correct = 0
         let wrong = 0
+         let currentImage=1
+         function giveAlert(){
+             alert ("Account locked")
+         }
         
 
         function processPhrase() {
@@ -32,12 +37,21 @@
                 correct++
                 alert("Access allowed")
                 out.innerHTML = "Correct: " + correct + " Wrong: " + wrong
-            } else {
+            } else{
                 wrong++
                 alert("Access denied")
                 out.innerHTML = "Correct: " + correct + " Wrong: " + wrong
-            }
+                if(wrong == 3)
+        {
+            document.getElementById("error").onclick = lockedAlert()
         }
+    }
+            }
+            function lockedAlert()
+    {
+        alert("account locked");
+    }
+
     </script>
  
      <script>
@@ -64,6 +78,6 @@
     <div class="container">
         <img src="Tiger.jpg" alt="Tiger image" height="200" width="200" onclick="newImage()" id="multipleImages">
     </div>
-    
+
 </body>
 </html> 
