@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Arithmetic</title>
+    </head>
+ 
+<body>
+
+<h1>Chakradha Prathivada computes</h1>
+
+<form>
+    <label for="form1_base">Enter a base</label>
+    <input type ="number" id="form1_base" name="form1_base" value=10> <br>
+
+    <label for="form1_exp">Enter an exponent </label>
+    <input type ="text" id="form1_exp" name="form1_exp" value=2> <br>
+
+    <input type="button" onclick="powers()" value="Compute">
+</form>
+
+
+<p id="result">Results</p>
+
+<script> 
+ var res = ""
+        power = 1
+        function powers() {
+            console.log("Getting form values")
+            base = document.getElementById("form1_base").value
+            exponent = document.getElementById("form1_exp").value
+            for (i = 0; i < exponent; i++) {
+                power *= base
+                res = res + " " + power
+            }
+            out = document.getElementById("result")
+            if (res != null) {
+                out.innerHTML = "powers of base are: " + res
+            }
+        }
+
+
+</script>
+
+</body>
+</html> 
