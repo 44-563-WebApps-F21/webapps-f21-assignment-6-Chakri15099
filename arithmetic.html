@@ -16,6 +16,7 @@
     <input type ="text" id="form1_exp" name="form1_exp" value=2> <br>
 
     <input type="button" onclick="powers()" value="Compute">
+    
 </form>
 
 
@@ -40,6 +41,47 @@
 
 
 </script>
+<form>
+<input type="radio" id="addition" name="arithmetic" value="addition" onclick="processRadio(this.value)">
+<label for="addition">+</label><br />
+
+<input type="radio" id="subtraction" name="arithmetic" value="subtraction" onclick="processRadio(this.value)">
+<label for="subtraction">-</label><br />
+
+<input type="radio" id="multiplication" name="arithmetic" value="multiplication" onclick="processRadio(this.value)">
+<label for="multiplication">*</label><br />
+
+<input type="radio" id="division" name="arithmetic" value="division" onclick="processRadio(this.value)">
+<label for="division">/</label><br />
+<p id="result2">The calculated values are displayed here</p>
+
+</form>
+<script>
+     function processRadio(type) {
+            let value = 0;
+            console.log("Getting input from radio buttons");
+            baseValue = document.getElementById("form1_base").value;
+            exponentValue = document.getElementById("form1_exp").value;
+            out = document.getElementById("result2")
+            if(type =="addition"){
+                value = (Number(base) + Number(exponent)).toString();
+                out.innerHTML = "The value is: "+value;
+            } 
+            else if(type == "subtraction") {
+                value = (Number(base) - Number(exponent)).toString();
+                out.innerHTML = "The value is: "+value;
+            } 
+            else if(type == "multiplication") {
+                value = (Number(base) * Number(exponent)).toString();
+                out.innerHTML = "The value is: "+value;
+            }
+            else{
+                value = (Number(base) / Number(exponent)).toString();
+                out.innerHTML = "The value is: "+value;
+            }
+        }
+</script>
+
 
 </body>
 </html> 
