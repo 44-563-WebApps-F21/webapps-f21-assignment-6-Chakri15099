@@ -39,3 +39,30 @@
             }
         }
     </script>
+ 
+     <script>
+          let usingImage = 1
+        function newImage() {
+            switch (usingImage) {
+                case 1:
+                    document.getElementById('multipleImages').src = "Tiger.jpg";
+                    usingImage++;
+                    break;
+                case 2:
+                    usingImage++;
+                    document.getElementById('multipleImages').src = "horse.jpg";
+                    break;
+
+                case 3:
+                    usingImage++;
+                    document.getElementById('multipleImages').src = "penguin.jpg";
+                    break;
+            }
+
+        }
+    </script>
+    <div class="container">
+        <img src="Tiger.jpg" alt="Tiger image" height="200" width="200" onclick="newImage()" id="multipleImages">
+    </div>
+</body>
+</html> 
